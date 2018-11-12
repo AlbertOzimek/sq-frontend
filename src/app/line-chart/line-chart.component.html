@@ -1,0 +1,11 @@
+<div class="chart-container">
+  <canvas *ngIf="dataSets | async as dataSets"
+          baseChart
+          [datasets]="dataSets"
+          [labels]="labels"
+          [options]="chartOptions"
+          [legend]="chartLegend"
+          [chartType]="chartType">
+  </canvas>
+</div>
+<app-date-slider *ngIf="labels" [labels]="labels" (dateRangeChanged)="onDateRangeChanged($event)"></app-date-slider>
